@@ -6,12 +6,11 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:08:11 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/03 17:29:09 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/03 18:47:59 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
-
 
 void ft_init_mlx_param( t_params *p)
 {
@@ -27,14 +26,17 @@ void ft_init_mlx_param( t_params *p)
 void ft_param_error(char *str)
 {
   ft_putstr("fractol: invalid option -- ");
-  ft_putstr(str);
-  ft_putstr("'\n try :\n./fractol mandelbrot\n./fractol julia [1-4]\n./fractol burningship\n");
+  if (str != '\0')
+  {
+    ft_putstr(str);
+    ft_putstr("'\n try :\n./fractol mandelbrot\n./fractol julia [1-4]\n./fractol burningship\n");
+  }
 }
 
 void params(char **argv, int argc, t_params *p)
 {
   int val;
-
+  
   if (argc == 3)
     {
       if (ft_strcmp(argv[1], "julia") == 0)
@@ -46,15 +48,18 @@ void params(char **argv, int argc, t_params *p)
       else
         ft_param_error(argv[1]);
     }
-    else if(argc == 2)
+  else 
     {
       if (ft_strcmp(argv[1], "mandelbrot") == 0)
         p->name = argv[1];
       else if (ft_strcmp(argv[1], "burningship") == 0)
         p->name = argv[1];
       else
+      {
         ft_param_error(argv[1]);
-    }
+        exit(1);
+      }
+    } 
 }
 
 int main(int argc, char **argv)

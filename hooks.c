@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 15:31:28 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/03 15:32:45 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/03 17:47:12 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,6 @@ int	key_hook(int keycode, t_params *p)
     p->t->horizontal +=0.05;
   if (keycode == 123)
     p->t->horizontal -=0.05;
-  if (keycode == 7)
-  {
-    if (p->t->c == 3)
-      p->t->c = 0;
-    else
-      p->t->c = p->t->c + 1;     
-  }
   if (keycode == 53)
      exit(0);
   draw(p);

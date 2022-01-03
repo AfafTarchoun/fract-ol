@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   params.c                                           :+:      :+:    :+:   */
+/*   helpfulfunc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 16:46:43 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/03 15:27:13 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/03 18:33:23 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ double **fillTable(double **tab)
 void juliaParams(double *x, double *y, int index)
 {
   double **tabValues;
+  
   tabValues = fillTable(tabValues);
   if (index >= 0 && index <= 3)
   {

@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 14:48:38 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/03 17:23:35 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/03 18:02:10 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <mlx.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include<stdio.h>
 
 typedef struct s_fractal
 {	
@@ -27,7 +28,7 @@ typedef struct s_fractal
 	int     iter;
 	int     max;
 	int 	**color;
-  int   c;
+ 	int   c;
 	double  	x;
 	double  	y;
 	double		zoom;
