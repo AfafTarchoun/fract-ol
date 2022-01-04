@@ -1,16 +1,4 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/03 17:52:01 by atarchou          #+#    #+#              #
-#    Updated: 2022/01/04 14:02:47 by atarchou         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-NAME = fractol.a
+NAME = fractol
 
 SRCS =  main.c\
 		mandelbrot.c\
@@ -19,28 +7,40 @@ SRCS =  main.c\
 		draw.c\
 		helpfulfunc.c\
 		hooks.c\
-		utils.c
-B_SRCS = burningship_bonus.c
-
+		utils.c\
+		params.c\
+		color_tab.c \
+		
+B_SRCS = burningship_bonus.c\
+		main.c\
+		mandelbrot.c\
+		julia.c\
+		colors.c\
+		draw_bonus.c\
+		helpfulfunc.c\
+		hooks.c\
+		utils.c\
+		params.c \
+		color_tab.c \
+	 
 CC = gcc 
-FLAGS = -lmlx -framework OpenGL -framework AppKit
-
+MLX = -lmlx -framework OpenGL -framework AppKit 
+FLAGS = -Wall -Werror -Wextra
 B_OBJ = $(B_SRCS:.c=.o)
 
-OBJS = $(SRCS:.c=.o)
+$(NAME) :
+	$(CC) $(FLAGS) $(MLX) $(SRCS) -o $(NAME)
 
 all : $(NAME)
 
-$(NAME): $(OBJS)
-
-bonus: $(B_OBJ)
+bonus :
+	$(CC) $(FLAGS) $(MLX) $(B_SRCS) -o $(NAME)
 
 %.o: %.c
-		$(CC) $(FLAGS) -c $< -o $@
-		ar rc $(NAME) $@
-		ranlib $(NAME)
+		$(CC)  $(FLAGS) $(MLX) -c $< -o $@
+
 clean :
-	rm -f $(OBJS) $(B_OBJ)
+	rm -f $(NAME)
 
 fclean: clean
 	rm -rf $(NAME)

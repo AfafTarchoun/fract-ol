@@ -6,13 +6,13 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 12:34:36 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 13:02:48 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/04 18:47:31 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
 
-static void	mandel_math(t_params *p)
+void	mandel_math(t_params *p)
 {
 	p->t->temp_x = p->t->x * p->t->x
 		- p->t->y * p->t->y + p->t->c_re;

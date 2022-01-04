@@ -6,13 +6,13 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 12:38:50 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 14:34:38 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/04 18:47:16 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
 
-static void	burn_math(t_params *p)
+void	burn_math(t_params *p)
 {
 	p->t->temp_x = p->t->x * p->t->x - p->t->y * p->t->y + p->t->c_re;
 	p->t->y = 2 * fabs(p->t->x * p->t->y) + p->t->c_im;

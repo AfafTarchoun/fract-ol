@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:08:11 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 17:29:59 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/04 18:43:04 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,58 +21,6 @@ void	ft_init_mlx_param(t_params *p)
 			&p->img->line_length, &p->img->endian);
 	p->t->zoom = 1.0;
 	p->t->c = 0;
-}
-
-void	ft_param_error(char *str)
-{
-	ft_putstr("fractol: invalid option -- ");
-	if (str != '\0')
-	{
-		ft_putstr(str);
-		ft_putstr("\n try :\n./fractol mandelbrot\n");
-		ft_putstr("./fractol julia [1-4]\n");
-		ft_putstr("./fractol burningship\n");
-	}
-}
-
-void	params(char **argv, int argc, t_params *p)
-{
-	if (argc == 3)
-	{
-		if (ft_strcmp(argv[1], "julia") == 0)
-		{
-			juliaparams(&p->j->julia_c_im, &p->j->julia_c_re, ft_atoi(argv[2]));
-			p->name = argv[1];
-		}
-		else
-		{
-			ft_param_error(argv[1]);
-			free_params(p);
-			exit(0);
-		}
-	}
-	else
-	{
-		if (ft_strcmp(argv[1], "mandelbrot") == 0)
-			p->name = argv[1];
-		else if (ft_strcmp(argv[1], "burningship") == 0)
-			p->name = argv[1];
-		else
-		{
-			ft_param_error(argv[1]);
-			free_params(p);
-			exit(0);
-		}
-	}
-}
-
-void	free_params(t_params *p)
-{
-	free(p->mlxs);
-	free(p->img);
-	free(p->j);
-	free(p->t);
-	free(p);
 }
 
 int	main(int argc, char **argv)

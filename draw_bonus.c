@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw.c                                             :+:      :+:    :+:   */
+/*   draw_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 16:00:10 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 19:17:09 by atarchou         ###   ########.fr       */
+/*   Created: 2022/01/04 19:11:42 by atarchou          #+#    #+#             */
+/*   Updated: 2022/01/04 19:11:52 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,6 @@ void	draw(t_params *p)
 		mandelbrot(p);
 	else if (ft_strcmp(p->name, "julia") == 0)
 		julia(p);
+	else if (ft_strcmp(p->name, "burningship") == 0)
+		burningship(p);
 }

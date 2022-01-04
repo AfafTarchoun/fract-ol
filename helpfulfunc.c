@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 16:46:43 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 17:04:13 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/04 18:50:13 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	juliaparams(double *x, double *y, int index)
 {
 	double	**tabvalues;
 
+	tabvalues = NULL;
 	tabvalues = filltable(tabvalues);
 	if (index >= 0 && index <= 3)
 	{

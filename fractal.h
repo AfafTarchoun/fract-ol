@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 14:48:38 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 16:01:57 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/04 18:47:42 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,10 @@ void		free_color(int **tab, size_t size);
 void		free_colors_tab(int **colortab);
 void		juliaparams(double *x, double *y, int index);
 void		my_mlx_pixel_put(t_params *p, int x, int y, int color);
-static void	burn_math(t_params *p);
-static void	mandel_math(t_params *p);
-static void	julia_math(t_params *p);
+void		burn_math(t_params *p);
+void		mandel_math(t_params *p);
+void		julia_math(t_params *p);
+int			check_fractal(char *str);
 int			ft_atoi(const char *str);
 int			ft_strcmp(const char *str1, const char *str2);
 int			*color_palette_pastel(int *color);

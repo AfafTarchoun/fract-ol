@@ -6,13 +6,13 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 15:47:09 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 14:30:18 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/04 18:47:50 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
 
-static void	julia_math(t_params *p)
+void	julia_math(t_params *p)
 {
 	p->t->temp_x = p->t->x * p->t->x - p->t->y * p->t->y + p->j->julia_c_re;
 	p->t->y = 2 * p->t->x * p->t->y + p->j->julia_c_im;

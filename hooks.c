@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 15:31:28 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 17:01:38 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/04 18:50:57 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	zoom(int button, int x, int y, t_params *p)
 {
+	(void)x;
+	(void)y;
 	if (button == 5)
 		p->t->zoom = p->t->zoom * 1 / 2;
 	if (button == 4)
