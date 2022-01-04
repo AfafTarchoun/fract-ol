@@ -6,12 +6,12 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 14:48:38 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/03 18:02:10 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/04 14:46:23 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MYLIB_H
-# define MYLIB_H
+#ifndef FRACTAL_H
+# define FRACTAL_H
 # define HEIGHT 900
 # define WIDTH  1100
 # define MAX 100
@@ -19,7 +19,7 @@
 # include <mlx.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include<stdio.h>
+# include <stdio.h>
 
 typedef struct s_fractal
 {	
@@ -72,8 +72,11 @@ typedef struct	s_params
 
 
 void	burningship(t_params *p);
+static void burn_math(t_params *p);
 void	mandelbrot(t_params *p);
+static void    mandel_math(t_params *p);
 void	julia(t_params *p);
+static void julia_math(t_params *p);
 void	params(char **argv, int argc, t_params *p);
 void	ft_param_error(char *str);
 void	ft_init_mlx_param( t_params *p);
@@ -91,5 +94,6 @@ void 	juliaParams(double *x, double *y, int index);
 void	my_mlx_pixel_put(t_params *p, int x, int y, int color);
 int 	key_hook(int keycode, t_params *p);
 void    draw(t_params *p);
+void	free_params(t_params *p);
 int		zoom(int button,int x,int y,t_params *p);
 #endif

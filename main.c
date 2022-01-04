@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:08:11 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/03 18:47:59 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/04 14:25:09 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,16 @@ void params(char **argv, int argc, t_params *p)
     {
       if (ft_strcmp(argv[1], "julia") == 0)
       {
-        val = ft_atoi(argv[2]) - 1;
+        val = ft_atoi(argv[2]) ;
         juliaParams(&p->j->julia_c_im, &p->j->julia_c_re, val);
         p->name = argv[1];
       }
       else
+      {
         ft_param_error(argv[1]);
+        free_params(p);
+        exit(0);
+      }
     }
   else 
     {
@@ -57,9 +61,19 @@ void params(char **argv, int argc, t_params *p)
       else
       {
         ft_param_error(argv[1]);
-        exit(1);
+        free_params(p);
+        exit(0);
       }
     } 
+}
+
+void  free_params(t_params *p)
+{
+  free(p->mlxs);
+  free(p->img);
+  free(p->j);
+  free(p->t);
+  free(p);
 }
 
 int main(int argc, char **argv)
@@ -72,6 +86,7 @@ int main(int argc, char **argv)
     p->mlxs = malloc(sizeof(t_mlx) * 1);
     p->img = malloc(sizeof(t_image) * 1);
     p->t = malloc(sizeof(t_fractal) * 1);
+    p->j = malloc(sizeof(t_julia_param) * 1);
     params(argv, argc, p);
     ft_init_mlx_param(p);
     draw(p);
@@ -79,6 +94,7 @@ int main(int argc, char **argv)
     mlx_hook(p->mlxs->mlx_win, 2, 0, key_hook, p);
     mlx_hook(p->mlxs->mlx_win, 4, 0, zoom, p);
     mlx_loop(p->mlxs->mlx);
+    free_params(p);
   }
   else
     ft_param_error(argv[1]);

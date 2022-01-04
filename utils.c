@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 16:55:16 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/03 17:13:49 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/03 19:00:08 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,6 @@ void ft_putstr(char *str)
   }
 }
 
-static int	ft_long(unsigned long long a, int n)
-{
-	if (a >= 9223372036854775807)
-	{
-		if (n < 0)
-			return (0);
-	}
-	return (-1);
-}
-
 static int	ft_isdigit(int c)
 {
 	if (c >= 48 && c < 58)
@@ -42,7 +32,7 @@ static int	ft_isdigit(int c)
 
 int	ft_atoi(const char *str)
 {
-	unsigned long long		a;
+	int		a;
 	int						v[2];
 
 	a = 0;
@@ -63,8 +53,6 @@ int	ft_atoi(const char *str)
 			break ;
 		a = a * 10 + str[v[0]] - '0';
 		v[0]++;
-		if (a >= 9223372036854775807)
-			return (ft_long(a, v[1]));
 	}
 	return ((int)v[1] * a);
 }
