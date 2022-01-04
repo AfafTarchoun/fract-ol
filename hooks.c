@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 15:31:28 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 16:00:55 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/04 17:01:38 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int	zoom(int button, int x, int y, t_params *p)
 int	key_hook(int keycode, t_params *p)
 {
 	if (keycode == 126)
-		p->t->vertical -=0.05;
+		p->t->vertical -= 0.05;
 	if (keycode == 125)
-		p->t->vertical +=0.05;
+		p->t->vertical += 0.05;
 	if (keycode == 124)
-		p->t->horizontal +=0.05;
+		p->t->horizontal += 0.05;
 	if (keycode == 123)
-		p->t->horizontal -=0.05;
+		p->t->horizontal -= 0.05;
 	if (keycode == 53)
 		exit(0);
 	draw(p);
