@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 19:11:42 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 19:22:16 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/05 20:35:08 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,6 @@ void	draw(t_params *p)
 		p->t->c = 0;
 	else
 		p->t->c = p->t->c + 1;
-	if (ft_strcmp(p->name, "mandelbrot") == 0)
-		mandelbrot(p);
-	else if (ft_strcmp(p->name, "julia") == 0)
-		julia(p);
-	else if (ft_strcmp(p->name, "burningship") == 0)
+	if (ft_strcmp(p->name, "burningship") == 0)
 		burningship(p);
 }

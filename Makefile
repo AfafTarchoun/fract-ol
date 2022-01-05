@@ -12,15 +12,12 @@ SRCS =  main.c\
 		color_tab.c \
 		
 B_SRCS = burningship_bonus.c\
+		params_bonus.c\
 		main.c\
-		mandelbrot.c\
-		julia.c\
 		colors.c\
 		draw_bonus.c\
-		helpfulfunc.c\
 		hooks.c\
 		utils.c\
-		params.c \
 		color_tab.c \
 	 
 CC = gcc 
