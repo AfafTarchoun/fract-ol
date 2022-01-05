@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 18:42:36 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 18:51:59 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/05 19:53:56 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,13 @@ void	ft_param_error(char *str)
 	{
 		ft_putstr(str);
 		ft_putstr("\n try :\n./fractol mandelbrot\n");
-		ft_putstr("./fractol julia [1-4]\n");
+		ft_putstr("./fractol julia [0-3]\n");
+		ft_putstr("./fractol burningship\n");
+	}
+	else
+	{
+		ft_putstr("\n try :\n./fractol mandelbrot\n");
+		ft_putstr("./fractol julia [0-3]\n");
 		ft_putstr("./fractol burningship\n");
 	}
 }
@@ -36,7 +42,7 @@ void	params(char **argv, int argc, t_params *p)
 {
 	if (argc == 3)
 	{
-		if (ft_strcmp(argv[1], "julia") == 0)
+		if (ft_strcmp(argv[1], "julia") == 0 && ft_number(argv[2]) == 0)
 		{
 			juliaparams(&p->j->julia_c_im, &p->j->julia_c_re, ft_atoi(argv[2]));
 			p->name = argv[1];

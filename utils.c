@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 16:55:16 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 15:29:39 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/05 19:53:03 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,27 @@ void	ft_putstr(char *str)
 	}
 }
 
-static int	ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= 48 && c < 58)
 		return (1);
+	return (0);
+}
+
+int	ft_number(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (ft_isdigit(str[i]))
+		{	
+			return (0);
+			i++;
+		}
+		return (1);
+	}
 	return (0);
 }
 

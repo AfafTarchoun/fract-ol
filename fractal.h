@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 14:48:38 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 18:47:42 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/05 19:39:05 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ void		my_mlx_pixel_put(t_params *p, int x, int y, int color);
 void		burn_math(t_params *p);
 void		mandel_math(t_params *p);
 void		julia_math(t_params *p);
+int			ft_isdigit(int c);
+int			ft_number(char *str);
 int			check_fractal(char *str);
 int			ft_atoi(const char *str);
 int			ft_strcmp(const char *str1, const char *str2);
