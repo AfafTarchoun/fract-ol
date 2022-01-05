@@ -5,7 +5,7 @@ SRCS =  main.c\
 		julia.c\
 		colors.c\
 		draw.c\
-		helpfulfunc.c\
+		juliahelpfunc.c\
 		hooks.c\
 		utils.c\
 		params.c\
@@ -31,7 +31,7 @@ $(NAME) :
 all : $(NAME)
 
 bonus :
-	$(CC) $(FLAGS) $(MLX) $(B_SRCS) -o $(NAME)
+	$(CC) $(FLAGS) $(MLX) $(B_SRCS) -o fractol_b
 
 %.o: %.c
 		$(CC)  $(FLAGS) $(MLX) -c $< -o $@
@@ -39,8 +39,10 @@ bonus :
 clean :
 	rm -f $(NAME)
 
-fclean: clean
-	rm -rf $(NAME)
+clean_b :
+	rm -f fractol_b
+
+fclean: clean clean_b
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 14:48:38 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/05 19:39:05 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/05 22:29:24 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_fractal
 typedef struct s_image
 {
 	void	*pic;
-	char	*addr;
+	int		*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
@@ -81,7 +81,7 @@ void		free_params(t_params *p);
 void		free_color(int **tab, size_t size);
 void		free_colors_tab(int **colortab);
 void		juliaparams(double *x, double *y, int index);
-void		my_mlx_pixel_put(t_params *p, int x, int y, int color);
+void		pixel_put(t_params *p, int x, int y, int color);
 void		burn_math(t_params *p);
 void		mandel_math(t_params *p);
 void		julia_math(t_params *p);

@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 16:55:16 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/05 19:53:03 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/05 22:26:42 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,11 @@ int	ft_number(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (ft_isdigit(str[i]))
-		{	
+		if (!ft_isdigit(str[i]))
 			return (0);
-			i++;
-		}
-		return (1);
+		i++;
 	}
-	return (0);
+	return (1);
 }
 
 int	ft_atoi(const char *str)

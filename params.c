@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 18:42:36 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/05 20:35:23 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/05 22:21:46 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	params(char **argv, int argc, t_params *p)
 {
 	if (argc == 3)
 	{
-		if (ft_strcmp(argv[1], "julia") == 0 && ft_number(argv[2]) == 0)
+		if (ft_strcmp(argv[1], "julia") == 0 && ft_number(argv[2]) == 1)
 		{
 			juliaparams(&p->j->julia_c_im, &p->j->julia_c_re, ft_atoi(argv[2]));
 			p->name = argv[1];

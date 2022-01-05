@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 12:34:36 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 18:47:31 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/05 22:25:15 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	mandelbrot(t_params *p)
 				* p->t->y <= 4 && p->t->iter < MAX)
 				mandel_math(p);
 			if (p->t->iter < MAX)
-				my_mlx_pixel_put(p, p->t->col, p->t->row,
+				pixel_put(p, p->t->col, p->t->row,
 					p->t->color[p->t->c][p->t->iter % 8]);
 		}
 	}

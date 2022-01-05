@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 15:47:09 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 18:47:50 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/05 22:25:10 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	julia(t_params *p)
 				&& p->t->iter < MAX)
 				julia_math(p);
 			if (p->t->iter < MAX)
-				my_mlx_pixel_put(p, p->t->col, p->t->row,
+				pixel_put(p, p->t->col, p->t->row,
 					p->t->color[p->t->c][p->t->iter % 8]);
 		}
 	}
