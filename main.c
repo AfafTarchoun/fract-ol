@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:08:11 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/05 22:30:36 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/06 12:04:34 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int	main(int argc, char **argv)
 		mlx_hook(p->mlxs->mlx_win, 2, 0, key_hook, p);
 		mlx_hook(p->mlxs->mlx_win, 4, 0, zoom, p);
 		mlx_loop(p->mlxs->mlx);
-		free_params(p);
 	}
 	else
 		ft_param_error(argv[1]);

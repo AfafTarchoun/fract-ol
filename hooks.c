@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 15:31:28 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/04 18:50:57 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/06 12:05:03 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ int	key_hook(int keycode, t_params *p)
 	if (keycode == 123)
 		p->t->horizontal -= 0.05;
 	if (keycode == 53)
+	{	
+		free_params(p);
 		exit(0);
+	}
 	draw(p);
 	mlx_put_image_to_window(p->mlxs->mlx, p->mlxs->mlx_win, p->img->pic, 0, 0);
 	return (0);
