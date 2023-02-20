@@ -6,7 +6,7 @@
 /*   By: atarchou <atarchou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:08:11 by atarchou          #+#    #+#             */
-/*   Updated: 2022/01/06 12:04:34 by atarchou         ###   ########.fr       */
+/*   Updated: 2022/01/06 14:42:22 by atarchou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ int	main(int argc, char **argv)
 	}
 	else
 		ft_param_error(argv[1]);
+	return (0);
 }
